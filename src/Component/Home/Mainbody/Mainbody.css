@@ -1,0 +1,22 @@
+.logo img{
+    height: 50px;
+    width: 100px;
+}
+.body{
+    display: flex;
+}
+.location{
+    width: 50%;
+}
+.card img{
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    background: transparent;
+}
+.homepage{
+    background-image: url('../../../Image/Rectangle\ 1.png');
+    background-size: cover;
+    height: 700px;
+}
+

@@ -1,0 +1,54 @@
+.date{
+    display: flex;
+
+   
+}
+.locationDetails{
+    display: flex;
+    margin-top: 80px;
+}
+.details{
+    width: 30%;
+    color: rgb(252, 247, 247);
+    margin-left: 100px;
+    
+}
+.details h1{
+    text-align: center;
+    font-size: 70px;
+}
+.sreebooking{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../Image/sundorbon.png);
+     height:1200px;
+    width: 1500px;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover; 
+    
+}
+.booking{
+    
+    background-color: gainsboro;
+    border-radius: 10px;
+   margin-left: 340px;
+}
+.button{
+  
+   color: orange;
+   width: 100%;
+}
+ input[type=text]{
+    width: 100%;
+    border: none;
+    
+}
+input[type=date]{
+    border: none;
+    padding: 5px;
+}
+.menu{
+    margin-right: 80px;
+    margin-left: 30px;
+    color: white;
+
+}
