@@ -6,17 +6,38 @@
     display: flex;
 }
 .location{
-    width: 50%;
+    width: 200px;
+    
 }
 .card img{
     height: 300px;
     width: 200px;
     border-radius: 10px;
     background: transparent;
+    
+}
+.card{
+    margin-left: 200px;
 }
 .homepage{
     background-image: url('../../../Image/Rectangle\ 1.png');
     background-size: cover;
     height: 700px;
+}
+.coxbazar{
+    margin-left: 50px;
+    color: white;
+    width: 40%;
+}
+.sreemongol{
+    margin-left: 50px;
+    color: white;
+    width: 40%;
+
+}
+.sundorbon{
+    margin-left: 50px;
+    color: white;
+    width: 40%;
 }
 

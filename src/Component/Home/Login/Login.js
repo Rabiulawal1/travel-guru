@@ -5,6 +5,12 @@ import "firebase/firestore";
 import firebaseConfig from '../../../firebaseConfig';
 import { userContext } from '../../../App';
 import { useHistory, useLocation } from 'react-router-dom';
+import './Login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  } from '@fortawesome/free-solid-svg-icons';
+import img from './../../../Icon/fb.png';
+import img1 from './../../../Icon/google.png';
+
 
 firebase.initializeApp(firebaseConfig);
 
@@ -129,8 +135,9 @@ const Login = () => {
 
 
     return (
-        <div>
-            <h1>This is login</h1>
+        
+        <div >
+            <div className='loginform'>
             <input type="checkbox" name="newUser" onChange={() => setNewUser(!newUser)}/>
             <label htmlFor="newUser">Signup for New User</label>
             <form onSubmit={handleSubmit}>
@@ -140,24 +147,45 @@ const Login = () => {
             <label htmlFor="email">Email: </label>  
             <input onBlur={handleBlur} type="text" name="email" placeholder="enter your Email" required/><br/>
             <label htmlFor="password">Password: </label> 
-            <input onBlur={handleBlur} type="password" name="password" placeholder="enter your password" required/><br/>
+            <input onBlur={handleBlur} type="password" name="password" placeholder="enter your password" required/><br/><br/><b></b>
             <input type="submit"/>
             </form>
-            {
+
+            </div>
+            <div className="fbsignin">
+                <div className="fbimg">
+                    <img src={img1} alt=""/>
+                </div>
+                <div className="fbbutton">
+                {
                 user.isSignedIn ? <button onClick={handleSignin}> Signout </button> :
 
                 <button onClick={handleSignin}>Google Signin </button>
 
             }
-
+                </div>
+        
+            </div> 
             
-            {
-                user.isSignedIn && <p>Welcome {user.name}</p>
-            }
+            
+            <div className="google">
+            
+
+            </div>
+            <div className="fbsignin">
+                <div className="fbimg">
+                    <img src={img} alt=""/>
+                </div>
+                <div className="fbbutton">
+                <button onClick={handleFbSignin}>FaceBook Signin</button>
+                </div>
+        
+            </div>            
+            
             <p style={{color:'red'}}>{user.error}</p>
             {user.success && <p style={{color:'green'}}>User {newUser ? 'created' : 'logedin'} Successfully</p>}
 
-            <button onClick={handleFbSignin}>FaceBook Signin</button>
+            
         </div>
     );
 };

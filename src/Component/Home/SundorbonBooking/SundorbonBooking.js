@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Nav, Form, FormControl, CardDeck, Card,Button} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { userContext } from '../../../App';
 import logo from './../../../Logo.png';
 import './SundorbonBooking.css';
 
 const SundorbonBooking = () => {
+  const [loggedInUser, setloggedInUser] = useContext(userContext);
     let history = useHistory();
       
     const booking = () => {
       history.push("/Sunhotel");
     }
+    const login = () =>{
+      history.push("/Login");
+
+  }
     return (
         <div className='sreebooking'>
       <Navbar  className="logo" bg="transparent" variant="transparent">
@@ -22,7 +28,7 @@ const SundorbonBooking = () => {
             <Nav.Link className='menu' href="#features">Destination</Nav.Link>
             <Nav.Link className='menu' href="#pricing">Blog</Nav.Link>
             <Nav.Link className='menu' href="#pricing">Contact</Nav.Link>
-            <Button className='button' variant="warning">Login</Button>
+            {loggedInUser.email ? <p>User: {loggedInUser.email}</p>  : <Button onClick={()=>login()} className='button' variant="warning">Login</Button>}
             </Nav>
             
         </Navbar>

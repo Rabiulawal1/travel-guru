@@ -1,0 +1,20 @@
+.hotelroom{
+    display: flex;
+    border: 1px solid lightgray;
+    margin: 10px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px lightgray;
+}
+.hoteldescription{
+    display: flex;
+    width: 50%;
+}
+.img img{
+    height: 150px;
+    width: 150px;
+    margin: 15px;
+}
+.hotelfacility{
+    margin: 15px;
+}

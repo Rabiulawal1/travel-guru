@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Sreemongol from '../Sreemongol/Sreemongol';
+import fakeData from './../../../fakeData/fakeData';
+import './Sreehotel.css';
 
 const Sreehotel = () => {
-    return (
-        <span>
-             <div>
-            <h1>Sree hotel</h1>
-        </div>
+    const Sunhotel = fakeData;
+    console.log(fakeData)
+    const [hotel, setHotel] = useState(Sunhotel);
 
-        </span>
+    return (
+        <div className='myhotel'>
+            <h4>Stay in Sreemongol hotel</h4>
+            <div className="hotelpart">
+            {
+                      hotel.map(hotel => <Sreemongol hotel = {hotel}
+                        ></Sreemongol>)
+            }
+            </div>
+            <div className="map">
+           
+            </div>
+            
+        </div>
        
     );
 };

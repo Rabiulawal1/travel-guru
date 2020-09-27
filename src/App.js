@@ -44,12 +44,12 @@ function App() {
           <Route path="/SundorbonBooking">
             <SundorbonBooking></SundorbonBooking>                   
           </Route>                   
-          <Route path="/Coxhotel">
+          <PrivateRoute path="/Coxhotel">
             <Coxhotel></Coxhotel>
-            </Route>          
-          <Route path="/Sreehotel">
+            </PrivateRoute>          
+          <PrivateRoute path="/Sreehotel">
             <Sreehotel></Sreehotel>
-          </Route>
+          </PrivateRoute>
           <Route path="/Sunhotel">
            <Sunhotel></Sunhotel>
           </Route>  

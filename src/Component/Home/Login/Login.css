@@ -1,0 +1,36 @@
+.loginform{
+    border: 1px solid black;
+    width: 500px;
+    height: 350px;
+    text-align: center;
+    background: lightgrey;
+    box-shadow: 5px 5px 5px gray;
+    margin-left: 500px;
+}
+input{
+    width: 100%;
+    border: none;
+    box-shadow: 5px 5px 5px gray;
+    height: 30px;
+    
+}
+input[type=submit]{
+    background-color: rgb(231, 124, 24);
+} 
+.fbsignin{
+    display: flex;
+    border: 1px solid gray;
+    width: 500px;
+    border-radius: 30px;
+    margin-left: 500px;
+    margin-top: 10px;
+}
+.fbimg img{
+    height: 50px;
+}
+.fbbutton{
+    margin-top: 10px;
+}
+.fbbutton button{
+    border: none;
+}

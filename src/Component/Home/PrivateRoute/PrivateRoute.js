@@ -5,6 +5,7 @@ import { userContext } from '../../../App';
 const PrivateRoute = ({children,...rest}) => {
 
     const [loggedInUser, setloggedInUser] = useContext(userContext);
+    return(
     <Route
     {...rest}
     render={({ location }) =>
@@ -20,6 +21,7 @@ const PrivateRoute = ({children,...rest}) => {
       )
     }
   />
+    )
 };
 
 export default PrivateRoute;

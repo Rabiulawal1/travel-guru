@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from './../../../Logo.png';
 import { Button } from 'react-bootstrap';
 import './CoxbazarBooking.css';
@@ -9,14 +9,21 @@ import {
     Route,
     Link, useHistory
   } from "react-router-dom";
+import { userContext } from '../../../App';
 
 const CoxbazarBooking = () => {
+  const [loggedInUser, setloggedInUser] = useContext(userContext);
 
     let history = useHistory();
       
     const booking = () => {
       history.push("/Coxhotel");
     }
+  
+      const login = () =>{
+          history.push("/Login");
+
+      }
     return (
         <div className='coxbooking'>
           <Navbar  className="logo" bg="transparent" variant="transparent">
@@ -29,7 +36,7 @@ const CoxbazarBooking = () => {
                 <Nav.Link className='menu' href="#features">Destination</Nav.Link>
                 <Nav.Link className='menu' href="#pricing">Blog</Nav.Link>
                 <Nav.Link className='menu' href="#pricing">Contact</Nav.Link>
-                <Button className='button' variant="warning">Login</Button>
+                {loggedInUser.email ? <p>User: {loggedInUser.email}</p>  : <Button  onClick={()=>login()}>Login</Button>}
                 </Nav>
                 
             </Navbar>

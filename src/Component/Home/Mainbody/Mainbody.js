@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../Logo.png';
 import './Mainbody.css';
 import { Navbar, Nav, Form, FormControl, Button, CardDeck, Card} from 'react-bootstrap';
@@ -11,8 +11,10 @@ import {
     Route,
     Link, useHistory
   } from "react-router-dom";
+import { userContext } from '../../../App';
 
 const Mainbody = () => {
+    const [loggedInUser, setloggedInUser] = useContext(userContext);
 
    
         let history = useHistory();
@@ -26,6 +28,10 @@ const Mainbody = () => {
         }
         const bookingSun = () =>{
             history.push("/SundorbonBooking");
+
+        }
+        const login = () =>{
+            history.push("/Login");
 
         }
     
@@ -43,7 +49,9 @@ const Mainbody = () => {
                 <Nav.Link href="#features">Destination</Nav.Link>
                 <Nav.Link href="#pricing">Blog</Nav.Link>
                 <Nav.Link href="#pricing">Contact</Nav.Link>
-                <Button>Login</Button>
+                
+                 {loggedInUser.email ? <p>User : {loggedInUser.email}</p>  : <Button  onClick={()=>login()}>Login</Button>}
+                
                 </Nav>
                 
             </Navbar>
@@ -51,18 +59,23 @@ const Mainbody = () => {
                 <div className="locations">
                     <div className="coxbazar">
                         <h1>Coxs Bazar</h1>
-                        <button onClick={()=>logIn()}>Booking</button>
-
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, ab.</p>
+                        <Button onClick={()=>logIn()} className='button' variant="warning">Booking →</Button>
+                       
                     </div>
                     <div className="sreemongol">
                         <h1>Sreemongol</h1>
-                        <button onClick={()=>logInSree()}>Booking</button>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, vero?</p>
+                        <Button onClick={()=>logInSree()} className='button' variant="warning">Booking →</Button>
+                        
 
 
                     </div>
                     <div className="sundorbon">
                         <h1>Sundorbon</h1>
-                        <button onClick={()=>bookingSun()}>Booking</button>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, necessitatibus?</p>
+                        <Button onClick={()=>bookingSun()} className='button' variant="warning">Booking →</Button>
+                        
 
                     </div>
 
